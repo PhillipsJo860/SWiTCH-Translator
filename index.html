@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Template</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #container {
+            display: grid;
+            width: 30vw;
+            margin: auto;
+            grid-template-columns: 1fr;
+
+            border: 1px solid black;
+            padding: 10px;
+            background-color: #4ce2c2;
+        }
+
+        #fields {
+            width: 25vw;
+        }
+
+        input {
+            margin-bottom: 20px;
+        }
+
+        #translation {
+            font-size: 1.3rem;
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+    <h1 id="project">JS Template</h1>
+    <h2 id="student"></h2>
+
+    <p id="directions"></p>
+
+    <ul>
+        <li>Dutch</li>
+        <li>French</li>
+        <li>German</li>
+    </ul>
+
+    <div class="fields"><input id="lang" type="text" size="50" placeholder="Enter the language you want to learn.">
+
+    <button id="check">Check Language</button>
+
+    <button type="reset" id="resetALL" value="Reset">Reset</button>
+
+    <p id="translation"></p>
+</div> 
+</div>
+
+
+    <script src="main.js">
+        function checkLang(){
+            let text;
+            let language = document.querySelector("#lang").value;
+
+            switch(language) {
+                case "french":
+                    text = "'Bonjour!' means hello in French.";
+                    break;
+                case "german":
+                    text = "'Guten Tag' means hello in German.";
+                    break;
+                case "dutch":
+                    text = "'Goededag' means hello in Dutch.";
+                    break;
+                default: 
+                text = "Sorry, but we don't teach that language at your school!"
+
+            }
+
+            document.querySelector('translation')
+        }
+
+    function resetParagraph()
+    {
+        document.querySelector('#translation')
+    }
+
+    function resetInputField()
+    {
+        document.querySelector('#lang')
+    }
+
+
+    document,querySelector('#resetALL').addEventListoner('click', ()
+    => {
+        resetParagraph();
+        resetInputField();
+    });
+
+    document.querySelector('#directions').innerHTML = instructions;
+    document.querySelector('#student').innerHTML = student;
+    document.querySelector('#project').innerHTML = project;
+    </script>
+</body>
+</html>
